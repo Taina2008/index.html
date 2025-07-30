@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Árvore Literária Interativa</title>
+  <style>
+    /* Estilos Gerais */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #e0f7fa, #c8e6c9);
+    }
+    
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 80%;
+      max-width: 600px;
+    }
+    
+    h1 {
+      color: #3a6b3f;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    
+    .tree {
+      width: 180px;
+      margin: 20px auto;
+    }
+    
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    button {
+      background-color: #8bc34a;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+    
+    button:hover {
+      background-color: #7cb342;
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    footer {
+      margin-top: 50px;
+      color: #777;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌳 Árvore Literária Interativa</h1>
+    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80"
+     alt="Árvore de livros"
+     class="tree">
+
+
+    <div class="buttons">
+      <button onclick="mostrarFrase()">🌿 Galho 1: Frase Literária</button>
+      <button onclick="mostrarLivro()">📚 Galho 2: Recomendação de Livro</button>
+     
+    </div>
+
+    <div id="resultado"></div>
+
+    <footer>
+      <p>Projeto Semana da Biblioteca: Obrigado por explorar nossa Árvore Literária! 🌱</p>
+    </footer>
+  </div>
+
+  <script>
+    // Função para mostrar frases literárias
+    function mostrarFrase() {
+      const frases = [
+        "“Um livro deve ser o machado que parte o mar congelado dentro de nós”",
+        "“Quem lê, viaja para lugares incríveis sem sair do lugar.”",
+        "“Livros são portas abertas para novas realidades.”",
+       "“Há amores que só podem viver em seu coração, não em sua vida.“",
+       "“Ler é sonhar com os olhos abertos“",
+       "“Quem mal lê, mal ouve, mal fala, mal vê.“"
+      ];
+      mostrar(frases);
+    }
+
+    // Função para mostrar recomendações de livros
+    function mostrarLivro() {
+      const livros = [
+        "A culpa é das estrelas – John Green",
+        "O diário de anne Frank – Anne frank",
+        "A Menina que Roubava Livros – Markus Zusak",
+        "O pequeno príncipe – Saint-Exupéry",
+        "A hora da Estrela – Clarice Lispector",
+        "Extraordinário – RJ. Palacio",
+        "Percy jackson e o ladrão de raios - Rick Riordan",
+        "Harry Potter e a pedra Filosofal - JK. Rowling",
+        "Diário de um banana - Jeff Kinney",
+        "A princesa salva a si mesma nesse livro - Amanda lovelace",
+        "A empregada - Freida McFADDEN",
+        "Lágrima de vidro - Gabriela Costa",
+        
+        
+      ];
+      mostrar(livros);
+    }
+
+
+    // Função genérica para mostrar o resultado
+    function mostrar(lista) {
+      const escolhido = lista[Math.floor(Math.random() * lista.length)];
+      document.getElementById("resultado").innerHTML = escolhido;
+    }
+  </script>
+
+</body>
+</html>
